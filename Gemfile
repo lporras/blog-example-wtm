@@ -33,6 +33,8 @@ gem 'kaminari'
 # Use Unicorn as the app server
 gem 'unicorn'
 
+gem "letter_opener", :group => :development
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
