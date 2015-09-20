@@ -3,8 +3,15 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @q      = Post.ransack(params[:q])
-    @posts  = @q.result(distinct: true).page(params[:page]).per(params[:per])
+    if params[:category_id].present?
+      @category = Category.find(params[:category_id])
+      @q      = Post.ransack(params[:q])
+      @posts  = @q.result(distinct: true).where(category_id: params[:category_id])
+      @posts  = @posts.page(params[:page]).per(params[:per])
+    else
+      @q      = Post.ransack(params[:q])
+      @posts  = @q.result(distinct: true).page(params[:page]).per(params[:per])
+    end
   end
 
   def show

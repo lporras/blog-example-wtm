@@ -20,6 +20,10 @@ Rails.application.routes.draw do
 
   get 'about' => "pages#about"
 
+  resources :categories, only: :none do
+    resources :posts, only: [:index]
+  end
+
   resources :posts do
       resources :comments
   end

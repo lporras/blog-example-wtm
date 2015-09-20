@@ -1,5 +1,9 @@
 <% content_for :header do %>
-  Lista de Articulos
+  <% if @category.present? %>
+    <%= @category.name %>
+  <% else %>
+    Lista de Articulos
+  <% end %>
 <% end %>
 
 <div class="row">
@@ -21,7 +25,11 @@
   <% end %>
 </div><!-- /.row -->
 
-<%= render @posts %>
+<% if @posts.empty? %>
+  <p class="lead">No se ha encontrado ningun articulo</p>
+<% else %>
+  <%= render @posts %>
+<% end %>
 
 <%= paginate @posts %>
 
