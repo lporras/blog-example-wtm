@@ -1,17 +1,15 @@
 # == Schema Information
 #
-# Table name: comments
+# Table name: categories
 #
 #  id         :integer          not null, primary key
-#  message    :text
-#  post_id    :integer
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  user_id    :integer
 #
 
-class Comment < ActiveRecord::Base
-  belongs_to :post
+class Category < ActiveRecord::Base
+  has_many :posts
 
-  belongs_to :user
+  validates :name, presence: true, uniqueness: true
 end
