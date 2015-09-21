@@ -1,9 +1,13 @@
 class UserMailer < ApplicationMailer
 
-  default from: "lporras16@gmail.com"
+  default from: "no-reply@blogexample.com"
 
-  def comment_email
-    mail(to: "lporras16@gmail.com", subject: "Nuevo Comentario")
+  def comment_email(user, comment)
+    @user = user
+    @comment = comment
+    @post = comment.post
+    mail(to: @user.email, subject: "Nuevo Comentario")
   end
 
 end
+
