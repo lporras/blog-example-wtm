@@ -10,6 +10,10 @@
     <div>
       <%= f.label :category_id %>:
       <%= f.collection_select :category_id, Category.all, :id, :name, prompt: "Selecciona una Categoría" %>
+      <%= f.label :photo %>:
+      <%= f.file_field :photo %>
+      o
+      <%= f.text_field :remote_photo_url %>
     </div>
     </br>
     <div>

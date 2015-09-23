@@ -17,6 +17,8 @@ class Post < ActiveRecord::Base
   validates :title, presence: true, uniqueness: true
   validates :body, presence: true
 
+  mount_uploader :photo, PictureUploader
+
   # Relationships
   has_many :comments
 

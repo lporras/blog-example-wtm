@@ -28,6 +28,8 @@ gem 'ransack'
 gem 'kaminari'
 
 gem 'figaro'
+gem 'carrierwave'
+gem "mini_magick"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
