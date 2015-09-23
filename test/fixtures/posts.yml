@@ -10,6 +10,7 @@
 #  tags        :string
 #  user_id     :integer
 #  category_id :integer
+#  photo       :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

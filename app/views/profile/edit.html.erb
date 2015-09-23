@@ -1,0 +1,18 @@
+<% content_for :header do %>
+  Editar Perfil
+<% end %>
+
+<%= form_for @user, url: profile_path do |f| %>
+    <div>
+      <%= f.label :first_name %>:
+      <%= f.text_field :first_name %>
+    </div>
+    <div>
+      <%= f.label :last_name %>:
+      <%= f.text_field :last_name %>
+    </div>
+    </br>
+    <div>
+      <%= f.submit %>
+    </div>
+<% end %>

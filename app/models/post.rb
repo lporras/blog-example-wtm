@@ -10,6 +10,7 @@
 #  tags        :string
 #  user_id     :integer
 #  category_id :integer
+#  photo       :string
 #
 
 class Post < ActiveRecord::Base

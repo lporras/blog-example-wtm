@@ -1,0 +1,14 @@
+<% content_for :header do %>
+  Mi Perfil
+<% end %>
+
+<ul>
+  <% if @user.first_name.present? %>
+    <li>First Name: <%= @user.first_name %></li>
+  <% end %>
+  <% if @user.last_name.present? %>
+    <li>Last Name: <%= @user.last_name %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Edit Profile", edit_profile_path, class: "btn btn-primary" %>
