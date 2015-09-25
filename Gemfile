@@ -26,6 +26,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'devise', '3.5.1'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'rails-i18n', '~> 4.0.0'
 
 gem 'ransack'
 gem 'kaminari'
