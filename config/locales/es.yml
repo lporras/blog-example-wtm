@@ -1,0 +1,6 @@
+es:
+  home: "Inicio"
+  pages:
+    about:
+      title: "Acerca de Nosotros"
+      description: "Somos una aplicación de Rails de Blogs"

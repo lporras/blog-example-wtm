@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+  pages:
+    about:
+      title: "About"
+      description: "We are a Rails Application for blogs"
