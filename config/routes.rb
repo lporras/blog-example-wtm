@@ -45,9 +45,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get 'home' => "pages#home"
-
-  get 'about' => "pages#about"
+  scope "(:locale)", locale: /en|es/ do
+    get 'home' => "pages#home"
+    get 'about' => "pages#about"
+  end
 
   resources :categories, only: :none do
     resources :posts, only: [:index]

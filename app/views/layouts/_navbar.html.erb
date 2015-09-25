@@ -18,7 +18,7 @@
           <%= link_to "Articulos", posts_path %>
         </li>
         <li class="<%= 'active' if current_page?(about_path) %>">
-          <%= link_to "About", about_path(locale: I18n.locale) %>
+          <%= link_to "About", about_path %>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span></a>
