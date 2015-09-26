@@ -15,6 +15,7 @@
 
 class Post < ActiveRecord::Base
   # Validations
+
   validates :title, presence: true, uniqueness: true
   validates :body, presence: true
 
@@ -26,5 +27,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
 
+  # category_name
   delegate :name, to: :category, prefix: :category, allow_nil: true
+
 end
