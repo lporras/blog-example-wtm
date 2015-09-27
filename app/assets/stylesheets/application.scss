@@ -15,3 +15,10 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "chosen";
+@import "bootstrap-chosen";
+
+html.turbolinks-progress-bar::before {
+  background-color: grey !important;
+  height: 1px !important;
+}

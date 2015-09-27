@@ -1,0 +1,7 @@
+<% if notice %>
+  <%= render partial: "layouts/flash", locals: {message: notice, type: "success"} %>
+<% end %>
+
+<% if alert %>
+  <%= render partial: "layouts/flash", locals: {message: alert, type: "danger"} %>
+<% end %>

@@ -4,12 +4,18 @@ es:
     about:
       title: "Acerca de Nosotros"
       description: "Somos una aplicación de Rails de Blogs"
+  posts:
+    show:
+      add_comment: "Haz un comentario"
   activerecord:
     models:
       post:
         one: "Artículo"
         other: "Artículos"
+      comment: "Comentario"
     attributes:
       post:
         title: "Título"
         body: "Descripción"
+      comment:
+        message: "Mensaje"

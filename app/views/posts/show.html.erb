@@ -30,17 +30,19 @@
   </ul>
 
   <% if user_signed_in? %>
-    <h2>Add a comment:</h2>
-    <%= form_for([@post, @post.comments.build]) do |f| %>
-      <p>
-           <%= f.label :message, "Comentarios" %>
-
-          <%= f.text_field :message %>
-      </p>
-      <p>
-        <%= f.submit %>
-      </p>
-    <% end %>
+    <h2><%= t(".add_comment") %></h2>
+    <div class="col-lg-8">
+      <%= form_for([@post, @comment]) do |f| %>
+        <div class="form-group">
+            <%= f.label :message, class: "control-label" %>
+            <%= f.text_area :message, class: "form-control", cols: 3, rows: 3 %>
+        </div>
+        </p>
+        <p>
+          <%= f.submit class: "btn btn-primary" %>
+        </p>
+      <% end %>
+    </div>
   <% else %>
     <p> Para agregar un comentario debes <%= link_to "iniciar sesion", new_user_session_path%></p>
   <% end %>
