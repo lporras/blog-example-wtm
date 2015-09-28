@@ -35,7 +35,7 @@
       <%= form_for([@post, @comment]) do |f| %>
         <div class="form-group">
             <%= f.label :message, class: "control-label" %>
-            <%= f.text_area :message, class: "form-control", cols: 3, rows: 3 %>
+            <%= f.text_area :message, class: "form-control", cols: 3, rows: 3, required: true, data: {"parsley-required": true} %>
         </div>
         </p>
         <p>
