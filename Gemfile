@@ -23,6 +23,7 @@ gem 'chosen-rails'
 gem 'bootstrap-chosen-rails'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 gem 'jbuilder', '~> 2.0'
+gem "parsley-rails"
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 # install bootstrap

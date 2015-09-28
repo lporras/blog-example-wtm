@@ -14,6 +14,7 @@
 //= require chosen-jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require parsley
 //= require turbolinks
 //= require_tree .
 
@@ -26,4 +27,18 @@ $(document).on('ready page:load', function () {
         no_results_text: 'No results matched'
     });
 
+    $('form').parsley({
+        uiEnabled: true,
+        trigger: "blur",
+        //successClass: 'has-success',
+        errorClass: 'has-error',
+        classHandler: function (ParsleyField) {
+            return ParsleyField.$element.parents(".form-group");
+        },
+        errorsContainer: function (ParsleyField) {
+            return ParsleyField.$element.parents(".form-group");
+        },
+        errorsWrapper: '<div class="parsley-errors-list"></div>',
+        errorTemplate: '<span class="help-block"></span>'
+    });
 });

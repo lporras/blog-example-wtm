@@ -20,6 +20,8 @@
     <% end %>
 
     <%= yield %>
+
+    <%= javascript_include_tag "parsley.i18n.#{I18n.locale.to_s}"%>
   </div>
 
 </body>
