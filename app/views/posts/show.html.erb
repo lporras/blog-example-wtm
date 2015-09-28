@@ -18,21 +18,14 @@
 
   <h3>Comentarios</h3>
 
-  <ul>
-    <% @comments.each do |comment| %>
-      <li>
-        <p><%=comment.message%></p>
-        <% if user_signed_in? %>
-          <%= link_to "Eliminar Comentario", post_comment_path(@post, comment), method: :delete, data: {confirm: "Estas seguro que deseas eliminar este articulo?"} %>
-        <% end %>
-      </li>
-    <% end %>
+  <ul id="post-comments">
+    <%= render @comments %>
   </ul>
 
   <% if user_signed_in? %>
     <h2><%= t(".add_comment") %></h2>
     <div class="col-lg-8">
-      <%= form_for([@post, @comment]) do |f| %>
+      <%= form_for([@post, @comment], remote: true) do |f| %>
         <div class="form-group">
             <%= f.label :message, class: "control-label" %>
             <%= f.text_area :message, class: "form-control", cols: 3, rows: 3, required: true, data: {"parsley-required": true} %>

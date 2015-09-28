@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
           @comments = @post.comments.all
           render template: "posts/show"
         end
+        format.js
       end
     end
   end
@@ -20,10 +21,18 @@ class CommentsController < ApplicationController
   def destroy
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
-    if @comment.destroy
-      redirect_to post_path(@post), notice: "Se ha eliminado correctamente"
-    else
-      redirect_to post_path(@post), error: "No se ha podido eliminar"
+    respond_to do |format|
+      if @comment.destroy
+        format.html do
+          redirect_to post_path(@post), notice: "Se ha eliminado correctamente"
+        end
+        format.js
+      else
+        format.html do
+          redirect_to post_path(@post), error: "No se ha podido eliminar"
+        end
+        format.js
+      end
     end
   end
 
