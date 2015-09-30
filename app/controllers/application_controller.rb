@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   def set_locale
+    flash[:notice] = "holaaa a todos"
     I18n.locale = params[:locale] || I18n.default_locale
   end
 

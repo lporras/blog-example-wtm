@@ -1,4 +1,16 @@
-var main = function (argument) {
+var addAlert = function (message, alertType) {
+    var $flashes = $("#flashes-zone");
+    var $alertContainer = $("<div class='alert alert-" + alertType + " alert-dismissible fade in' role='alert'></div>");
+    var $closeButton = $('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>');
+    var $span = $("<span>"+ message + "</span>");
+
+    $alertContainer.append($closeButton);
+    $alertContainer.append($span);
+
+    $flashes.append($alertContainer);
+};
+
+var main = function (event) {
 
     var $alert = $(".alert");
 
