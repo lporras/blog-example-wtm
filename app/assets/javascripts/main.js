@@ -8,6 +8,8 @@ var main = function (argument) {
 
     setTimeout(hideAlert, 2000);
 
+    $(".chosen-select").chosen();
+
 };
 
 $(document).on('ready page:load', main);
