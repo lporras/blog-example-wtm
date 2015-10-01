@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require chosen-jquery
+//= require parsley
+//= require parsley.i18n.es
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .

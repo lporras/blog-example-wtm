@@ -11,17 +11,33 @@ var addAlert = function (message, alertType) {
 };
 
 var main = function (event) {
-
     var $alert = $(".alert");
-
     var hideAlert = function () {
         $alert.alert('close');
     };
-
     setTimeout(hideAlert, 2000);
-
     $(".chosen-select").chosen();
 
+    /*
+    $form = $("form.edit_post");
+
+    $form.submit(function () {
+        var isValid = true;
+
+        var $title = $form.find("input[type='text']#post_title")
+
+        if ($title.val() === "") {
+            var $formGroup = $title.parents(".form-group");
+            $formGroup.addClass("has-error");
+            $formGroup.append("<span class='help-block'>no puede estar en blanco</span>");
+            isValid = false;
+        }
+
+        return isValid;
+    });
+    */
+
+    $("form.edit_post").parsley();
 };
 
 $(document).on('ready page:load', main);
