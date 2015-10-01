@@ -31,16 +31,15 @@
 
   <% if user_signed_in? %>
     <h2>Add a comment:</h2>
-    <%= form_for([@post, @post.comments.build]) do |f| %>
-      <p>
-           <%= f.label :message, "Comentarios" %>
 
-          <%= f.text_field :message %>
-      </p>
-      <p>
-        <%= f.submit %>
-      </p>
+    <%= form_for([@post, @post.comments.build]) do |f| %>
+      <div class="form-group">
+           <%= f.label :message, "Comentarios", class: "control-label" %>
+          <%= f.text_area :message, class: "form-control", required: true, data: {"parsley-required": true} %>
+      </div>
+      <%= f.submit class: "btn btn-primary" %>
     <% end %>
+
   <% else %>
     <p> Para agregar un comentario debes <%= link_to "iniciar sesion", new_user_session_path%></p>
   <% end %>
