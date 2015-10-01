@@ -1,0 +1,7 @@
+<%= form_for([@post, @comment], remote: true) do |f| %>
+  <div class="form-group">
+       <%= f.label :message, "Comentarios", class: "control-label" %>
+      <%= f.text_area :message, class: "form-control", required: true, data: {"parsley-required": true} %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

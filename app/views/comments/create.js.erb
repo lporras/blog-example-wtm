@@ -1,0 +1,6 @@
+<% if @comment.valid? %>
+  $("#comments-list").append("<%= j(render @comment) %>");
+  $("#comment_message").val("");
+<% else %>
+  $("#new_comment").html("<%= j(render 'comments/form')");
+<% end %>

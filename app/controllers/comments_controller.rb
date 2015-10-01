@@ -3,8 +3,15 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
+
     @comment = @post.comments.create(comment_params)
-    redirect_to post_path(@post)
+
+    respond_to do |format|
+      format.html do
+        redirect_to post_path(@post)
+      end
+      format.js
+    end
   end
 
   def destroy
