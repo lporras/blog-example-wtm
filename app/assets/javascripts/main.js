@@ -37,7 +37,28 @@ var main = function (event) {
     });
     */
 
-    $("form.edit_post").parsley();
+    $("form").parsley({
+        uiEnabled: true,
+        errorClass: 'has-error',
+        classHandler: function (ParsleyField) {
+            return ParsleyField.$element.parents(".form-group");
+        },
+        errorsContainer: function (ParsleyField) {
+            return ParsleyField.$element.parents(".form-group");
+        },
+        errorTemplate: '<span class="help-block"></span>'
+    });
 };
 
 $(document).on('ready page:load', main);
+
+
+
+
+
+
+
+
+
+
+
