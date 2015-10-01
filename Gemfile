@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'chosen-rails'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 gem "parsley-rails"
+gem 'ckeditor'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

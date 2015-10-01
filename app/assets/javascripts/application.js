@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require chosen-jquery
 //= require parsley
+//= require ckeditor/init
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .

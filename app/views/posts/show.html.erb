@@ -5,12 +5,19 @@
 <%= link_to "Volver", posts_path %>
 
 <article>
+
   <% if @post.category_name.present? %>
+
     <p class="lead">Categoría: <%= @post.category_name%></p>
+
   <% end %>
+
   <%= image_tag @post.photo_url(:thumb) if @post.photo? %>
-  <p class="lead"><%= @post.body %></p>
+
+  <p class="lead"><%= raw @post.body %></p>
+
   <p>Creado en <%= time_ago_in_words(@post.created_at)%></p>
+
   <% if user_signed_in? %>
     <%= link_to "Editar", edit_post_path(@post)%>
     <%= link_to "Eliminar", post_path(@post), method: :delete, data: {confirm: "Estas seguro que deseas eliminar este articulo?"} %>

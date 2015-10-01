@@ -3,6 +3,6 @@
   <% if post.category_name.present? %>
     <p class="lead">Categoría: <%= post.category_name%></p>
   <% end %>
-  <p><%= truncate(post.body, {length: 140}) %></p>
+  <p><%= truncate(sanitize(strip_tags(post.body)), {length: 140}) %></p>
   <%= link_to "Ver Post", post_path(post), class: "btn btn-link" %>
 </article>
