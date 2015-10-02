@@ -50,6 +50,28 @@ var main = function (event) {
         errorsWrapper: '<div class="parsley-errors-list"></div>',
         errorTemplate: '<span class="help-block"></span>'
     });
+
+
+     // esto hace un llamado AJAX con los datos del formulario create comment
+    /*
+    $("form#new_comment").on("submit", function (event) {
+        // evita el submit real del form
+        event.preventDefault();
+
+        var $form = $(this);
+        var url = $form.attr("action");
+
+        // obtener la informacion del formulario
+        var data = $form.serialize();
+
+        // hacemos AJAX con POST al /posts/:post_id/comments y se ejectura el comments/create.js.erb
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            dataType: "scritpt"
+        });
+    });*/
 };
 
 $(document).on('ready page:load', main);

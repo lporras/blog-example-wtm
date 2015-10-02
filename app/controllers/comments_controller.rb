@@ -10,6 +10,9 @@ class CommentsController < ApplicationController
       format.html do
         redirect_to post_path(@post)
       end
+      format.json do
+        render json: @comment.to_json
+      end
       format.js
     end
   end
