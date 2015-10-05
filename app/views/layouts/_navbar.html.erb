@@ -40,6 +40,7 @@
           </li>
         <% else %>
           <li class="<%= 'active' if current_page?(new_user_session_path) %>"><%= link_to t('devise.sessions.new.sign_in', :default => "Sign in"), new_user_session_path %></li>
+          <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
           <li class="<%= 'active' if current_page?(new_user_registration_path) %>"><%= link_to t('devise.registrations.new.sign_up', :default => "Sign up"), new_user_registration_path %></li>
         <% end %>
       </ul>

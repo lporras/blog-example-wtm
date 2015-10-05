@@ -9,6 +9,9 @@
   <% if @user.last_name.present? %>
     <li>Last Name: <%= @user.last_name %></li>
   <% end %>
+  <% if @user.avatar? %>
+    <li><%= image_tag @user.avatar.url %></li>
+  <% end %>
 </ul>
 
 <%= link_to "Edit Profile", edit_profile_path, class: "btn btn-primary" %>
