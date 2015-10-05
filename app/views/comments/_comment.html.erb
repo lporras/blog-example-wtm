@@ -1,6 +1,6 @@
 <li>
   <p><%= comment.message %></p>
   <% if user_signed_in? %>
-    <%= link_to "Eliminar Comentario", post_comment_path(@post, comment), method: :delete, data: {confirm: "Estas seguro que deseas eliminar este articulo?"} %>
+    <%= link_to "Eliminar Comentario", [comment.commentable, comment], method: :delete, data: {confirm: "Estas seguro que deseas eliminar este articulo?"} %>
   <% end %>
 </li>

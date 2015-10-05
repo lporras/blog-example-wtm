@@ -15,5 +15,20 @@
   <%= @movie.user %>
 </p>
 
+<h3>Comentarios</h3>
+
+<ul id="comments-list">
+  <%= render @comments %>
+</ul>
+
+<% if user_signed_in? %>
+  <h2>Add a comment:</h2>
+
+  <%= render "comments/form", comment: @comment, commentable: @movie %>
+
+<% else %>
+  <p> Para agregar un comentario debes <%= link_to "iniciar sesion", new_user_session_path%></p>
+<% end %>
+
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>

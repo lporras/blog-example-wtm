@@ -57,11 +57,11 @@ Rails.application.routes.draw do
   resource :profile, only: [:show, :edit, :update], controller: :profile
 
   resources :posts do
-      resources :comments, only: [:create, :destroy]
+      resources :comments, only: [:create, :destroy], module: :posts
   end
 
   resources :movies do
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy], module: :movies
   end
 
   root to: "pages#home"

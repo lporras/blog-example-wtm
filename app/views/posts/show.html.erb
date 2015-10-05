@@ -32,7 +32,7 @@
   <% if user_signed_in? %>
     <h2>Add a comment:</h2>
 
-    <%= render "comments/form" %>
+    <%= render "comments/form", comment: @comment, commentable: @post %>
 
   <% else %>
     <p> Para agregar un comentario debes <%= link_to "iniciar sesion", new_user_session_path%></p>
