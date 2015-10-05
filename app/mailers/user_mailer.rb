@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
   def comment_email(user, comment)
     @user = user
     @comment = comment
-    @post = comment.post
+    @post = comment.commentable
     mail(to: @user.email, subject: "Nuevo Comentario")
   end
 

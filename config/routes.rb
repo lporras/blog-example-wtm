@@ -43,6 +43,7 @@
 #
 
 Rails.application.routes.draw do
+  resources :movies
   devise_for :users
 
   scope "(:locale)", locale: /en|es/ do

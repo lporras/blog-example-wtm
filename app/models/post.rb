@@ -22,7 +22,7 @@ class Post < ActiveRecord::Base
   mount_uploader :photo, PictureUploader
 
   # Relationships
-  has_many :comments
+  has_many :comments, as: :commentable
 
   belongs_to :user
   belongs_to :category
