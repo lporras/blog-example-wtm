@@ -43,7 +43,6 @@
 #
 
 Rails.application.routes.draw do
-  resources :movies
   devise_for :users
 
   scope "(:locale)", locale: /en|es/ do
@@ -58,7 +57,11 @@ Rails.application.routes.draw do
   resource :profile, only: [:show, :edit, :update], controller: :profile
 
   resources :posts do
-      resources :comments
+      resources :comments, only: [:create, :destroy]
+  end
+
+  resources :movies do
+    resources :comments, only: [:create, :destroy]
   end
 
   root to: "pages#home"
