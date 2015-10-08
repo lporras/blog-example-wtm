@@ -43,7 +43,7 @@
 #
 
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
 
   scope "(:locale)", locale: /en|es/ do
     get 'home' => "pages#home"
