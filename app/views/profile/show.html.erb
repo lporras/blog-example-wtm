@@ -3,6 +3,7 @@
 <% end %>
 
 <ul>
+  <li><%= image_tag @user.avatar_url(:thumb) if @user.avatar? %></li>
   <% if @user.first_name.present? %>
     <li>First Name: <%= @user.first_name %></li>
   <% end %>
